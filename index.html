@@ -2,47 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>PokeDrop</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <!-- <link href="assets/style/reset.css" rel="stylesheet" type="text/css" /> -->
-
-  <link href="assets/style/style.css" rel="stylesheet" type="text/css" />
+<link href="assets/style/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="container">
-  <div class="open">
-    <div class="top poke-ball" data-toggle="modal" data-target="#myModal"></div>
-    <div class="bottom poke-ball". data-toggle="modal" data-target="#myModal"></div>
-  </div>
+  <!-- opening div contains pokeball and modal -->
+  <div class="opening">
+    <div class="flex-box">
+      <div class="pokeball-container">
+        <div class="top poke-ball" data-toggle="modal" data-target="#myModal"></div>
+        <div class="bottom poke-ball". data-toggle="modal" data-target="#myModal"></div>
+      </div>    
 
-  <div>
-    
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button> -->
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>  <!-- close modal header -->
-      <div class="modal-body">
-        ...
-      </div> <!-- close modal body -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> <!--  close Modal footer -->
-    </div> <!-- close Modal Content -->
-  </div> <!-- close Modal dialog -->
-</div> <!-- close Modal -->
-
-  </div>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h4 class="modal-title" id="myModalLabel">Log On</h4>
+            </div>  <!-- close modal header -->
+            <div class="modal-body">
+              ...
+            </div> <!-- close modal body -->
+            <div class="modal-footer">
+              modal footer
+            </div> <!--  close Modal footer -->
+          </div> <!-- close Modal Content -->
+        </div> <!-- close Modal dialog -->
+      </div> <!-- close Modal -->
+    </div> <!-- close flex-box -->
+  </div> <!-- closing opening   --> 
 </div>  <!-- closing container -->
+
  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
 <script src="assets/script/JavaScript.js"></script>
 </body>

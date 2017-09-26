@@ -1,0 +1,53 @@
+
+.top {
+  height:90px;
+  width:180px;
+  border-radius: 90px 90px 0 0;
+  background:red;
+  transition: transform 1s linear;
+  transform-origin: bottom right;
+  transform-style: preserve-3D;
+}
+
+.top-rotate {
+  transform: rotate(200deg);
+}
+
+
+.bottom {
+  height:90px;
+  width:180px;
+  border-radius: 0 0 90px 90px;
+  background:#e4e4e4;
+}
+
+.open {
+  background-color: darkblue;
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.fade.in {
+    opacity: 1;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+.modal-dialog {
+  background-color: rgba(240, 248, 255, 0.73);
+}
+

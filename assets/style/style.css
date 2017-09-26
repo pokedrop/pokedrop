@@ -1,8 +1,12 @@
 
+
+body {
+  background-color: #010131;
+}
 .top {
-  height:90px;
-  width:180px;
-  border-radius: 90px 90px 0 0;
+  height:180px;
+  width:360px;
+  border-radius: 180px 180px 0 0;
   background:red;
   transition: transform 1s linear;
   transform-origin: bottom right;
@@ -15,15 +19,12 @@
 
 
 .bottom {
-  height:90px;
-  width:180px;
-  border-radius: 0 0 90px 90px;
+  height:180px;
+  width:360px;
+  border-radius: 0 0 180px 180px;
   background:#e4e4e4;
 }
 
-.open {
-  background-color: darkblue;
-}
 
 .modal-open .modal {
     overflow-x: hidden;
@@ -36,18 +37,38 @@
 
 .modal {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  left: 50%;
+  top: 50%;
+  margin-left: -35%;
+  margin-top: -10%;
+  width: 70%;
   z-index: 1050;
   display: none;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   outline: 0;
+  text-align: center;
 }
 
 .modal-dialog {
   background-color: rgba(240, 248, 255, 0.73);
+}
+
+.opening {
+  position: fixed;
+  top: 50%;
+  left:50%;
+  margin-left: -180px;
+  margin-top: -180px;
+
+}
+.flex-box {
+  display: flex;
+  flex:1;
+  align-items: center; 
+}
+
+.pokeball-container {
+  margin: auto;
 }
 

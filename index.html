@@ -5,18 +5,21 @@
   <title>PokeDrop</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   <!-- <link href="assets/style/reset.css" rel="stylesheet" type="text/css" /> -->
-<link href="assets/style/style.css" rel="stylesheet" type="text/css" />
+  <link href="assets/style/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://use.fontawesome.com/b6ab23dc8b.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="main">
   <!-- opening div contains pokeball and modal -->
   <div class="opening">
+  <!-- <div class="display-hide">   -->
     <div class="flex-box">
       <div class="pokeball-container">
         <div class="top poke-ball" data-toggle="modal" data-target="#myModal"></div>
-        <div class="bottom poke-ball". data-toggle="modal" data-target="#myModal"></div>
+        <div class="bottom poke-ball" data-toggle="modal" data-target="#myModal"></div>
       </div>    
 
       <!-- Modal -->
@@ -28,6 +31,7 @@
             </div>  <!-- close modal header -->
             <div class="modal-body">
               ...
+              <input class="btn btn-primary user-login" data-toggle="modal" data-target="#myModal" type="submit" value="Submit">
             </div> <!-- close modal body -->
             <div class="modal-footer">
               modal footer
@@ -37,9 +41,53 @@
       </div> <!-- close Modal -->
     </div> <!-- close flex-box -->
   </div> <!-- closing opening   --> 
+<!-- starting other divs -->
+  <!-- flower navigation -->
+  <nav id="menu" class="menu">
+    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+    <label class="menu-open-button" for="menu-open">
+    <span class="fa fa-bars"></span>
+    </label>
+
+    <a href="#welcome" class="menu-item blue"> <i class="fa fa-home"></i> </a>
+    <a href="#weather" class="menu-item green"> <i class="fa fa-umbrella"></i> </a>
+    <a href="#pokemon" class="menu-item red"> <i class="fa fa-podcast"></i> </a>
+    <a href="#" class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
+    <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a>
+    <a href="#profile" class="menu-item lightblue"> <i class="fa fa-user-circle"></i> </a>
+  </nav> <!-- closing flower navigation -->
+
+ <!-- main page  -->
+  <div id="welcome" class="page">
+    <img src="assets/images/main.png" alt="welcome page place holder">
+  </div>
+ <!-- weather page  -->
+  <div id="weather" class="page">
+    <div class="city">Saannn Frannn ci</div>
+    <div class="wind">hella windy</div>
+    <div class="humidity">moist </div>
+    <div class="temp">hot hot hot </div>
+    <div id="map"></div>
+  </div>
+  <!-- pokemon page -->
+  <div id="pokemon" class="page">
+    <img src="assets/images/pokeDailyInfo.png" alt="poke Daily Info page place holder">
+  </div>
+  <!-- profile page -->
+  <div id="profile" class="page">
+    <img src="assets/images/profile.png" alt="user profile place holder">
+  </div>
+
+
 </div>  <!-- closing container -->
 
+
+<!-- <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSayUDK6Hh6o-JWM8pPBboUNY6wFWTK88&callback=initMap"></script> -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSayUDK6Hh6o-JWM8pPBboUNY6wFWTK88"></script>
  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
 <script src="assets/script/JavaScript.js"></script>
+
 </body>
 </html>

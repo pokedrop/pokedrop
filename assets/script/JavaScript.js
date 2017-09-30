@@ -57,7 +57,7 @@ $('#menu').on("click", '.lightblue', function () {
 
 
 //map and weather page 
-//Jimmy's section
+//Jimmy's section. 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},

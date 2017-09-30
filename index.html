@@ -10,9 +10,10 @@
   <!-- <link href="assets/style/reset.css" rel="stylesheet" type="text/css" /> -->
   <link href="assets/style/style.css" rel="stylesheet" type="text/css" />
   <script src="https://use.fontawesome.com/b6ab23dc8b.js"></script>
+  <link rel="manifest" href="asset/script/manifest.json">
 </head>
 <body>
-<div class="main">
+<div class="container">
   <!-- opening div contains pokeball and modal -->
   <div class="opening">
   <!-- <div class="display-hide">   -->
@@ -55,11 +56,14 @@
     <a href="#" class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
     <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a>
     <a href="#profile" class="menu-item lightblue"> <i class="fa fa-user-circle"></i> </a>
-  </nav> <!-- closing flower navigation -->
+  </nav>   <!-- closing flower navigation -->
 
  <!-- main page  -->
   <div id="welcome" class="page">
-    <img src="assets/images/main.png" alt="welcome page place holder">
+        <div class="row align-items-center">
+        <div class="pokeImg col-sm-4"></div>
+        <div class ="weatherMsg col-sm-8">col-8</div>
+    </div>
   </div>
  <!-- weather page  -->
   <div id="weather" class="page">
@@ -77,7 +81,9 @@
   <div id="profile" class="page">
     <img src="assets/images/profile.png" alt="user profile place holder">
   </div>
-
+  <div id="chat" class="page">
+    <img src="assets/images/profile.png" alt="user profile place holder">
+  </div>
 
 </div>  <!-- closing container -->
 

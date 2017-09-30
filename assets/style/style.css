@@ -276,9 +276,21 @@ span.fa.fa-bars {
   margin-top: -80px;
 }
 
+/*welcome page style*/
+
+#welcome {
+  color: #fff;
+  font-size: 95px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.35;
+  font-style: italic;
+}
 
 #map {
   height: 25%;
 }
+
+
 
 

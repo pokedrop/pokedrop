@@ -33,7 +33,7 @@ $( document ).ready(function(){
   $('#menu').on("click", '.green', function () {
     console.log("i'm in green")
     $('#welcome').hide();
-    $('#weather').show();
+    $('#weather').show(); initMap();
     $('#profile').hide();
     $('#pokemon').hide();
   });
@@ -57,7 +57,7 @@ $('#menu').on("click", '.lightblue', function () {
 
 
 //map and weather page 
-
+//Jimmy's section
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
@@ -78,9 +78,9 @@ function initMap() {
       infoWindow.setContent('Location found.');
       infoWindow.open(map);
       map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
+    }, //function() {
+      //handleLocationError(true, infoWindow, map.getCenter());
+    //});
   } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
@@ -125,6 +125,8 @@ $.ajax({
 } //closing weather location 
 
 // end of map and weather
+
+
 
 
 }); // closing on document ready

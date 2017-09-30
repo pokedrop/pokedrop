@@ -1,0 +1,15 @@
+{
+  "name": "PokeDrop",
+  "short_name": "PokeDrop",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f442df",
+  "description": "A simply adorable pokemon notification app.",
+  "icons": [{
+    "src": "assets/images/pokedrop.png",
+    "sizes": "130X130",
+    "type": "image/png"
+    }],
+  "start_url": "index.html?launcher=true",
+  "gcm_sender_id": "103953800507"
+}

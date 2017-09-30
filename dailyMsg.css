@@ -1,0 +1,34 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  background-color: #ff20a4;
+}
+
+.container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.row {
+  color: #fff;
+  font-size: 95px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.35;
+  font-style: italic;
+}

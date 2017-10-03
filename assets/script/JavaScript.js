@@ -1,4 +1,26 @@
 
+  // init location API
+function initMap() {
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+    console.log(pos)    
+    var latitude = pos.lat; 
+    var longitude = pos.lng;
+    //var location = ("{lat: "+latitude+", lng: "+longitude+"}");
+    localStorage.setItem("latitude", latitude);
+    localStorage.setItem("longitude", longitude);
+    var location = JSON.stringify(pos);
+    localStorage.setItem("pos", location);
+    }); // closing getCurrentPosition
+  }; //closing if navigator.geolocation
+
+}; //initLocation
+
 
 $( document ).ready(function(){
 
@@ -33,7 +55,7 @@ $( document ).ready(function(){
   $('#menu').on("click", '.green', function () {
     console.log("i'm in green")
     $('#welcome').hide();
-    $('#weather').show(); initMap();
+    $('#weather').show(); loadMap();
     $('#profile').hide();
     $('#pokemon').hide();
   });
@@ -55,37 +77,40 @@ $('#menu').on("click", '.lightblue', function () {
   $('#pokemon').hide();
 });
 
+$(document).on('laod', ".pokeball-container", weatherLocation());
 
 //map and weather page 
-//Jimmy's section
-function initMap() {
+//Jimmy's section modified 
+function loadMap() {
+  var lat = localStorage.getItem("latitude");
+  var lng = localStorage.getItem("longitude");
+  var pos = JSON.parse(localStorage.getItem("pos"));
+
+  //var myLatLng = new google.maps.LatLng(pos); 
+
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
+    center: {lat: 50.00, lng: -50.00},
     zoom: 6
   });
-  var infoWindow = new google.maps.InfoWindow;
-  // Try HTML5 geolocation.
+
+  infoWindow = new google.maps.InfoWindow;
+
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-      var latitude = pos.lat;
-      var longitude = pos.lng;
-      weatherLocation(latitude, longitude);
+
+      // infoWindow.setPosition(pos);
+
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
-      //infoWindow.open(map);
-      //map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
+      infoWindow.open(map); 
+      // map.setCenter(pos);
+      map.setCenter(pos);
+      loadWeather();
+      handleLocationError(true, infoWindow, map.getCenter());      
   } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
-};  // closing initMap
+};  // closing loadMap
     
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
@@ -95,8 +120,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }; // closing handleLocationError
 
-function weatherLocation (latty, longy) {
+function weatherLocation() {
+  console.log("I'm in weatherLocation")
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
+var latty = localStorage.getItem("latitude");
+var longy = localStorage.getItem("longitude");
 // Here we are building the URL we need to query the database
 
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
@@ -112,21 +140,30 @@ $.ajax({
   console.log(queryURL);
   // Log the resulting object
   console.log(response);
-  // Transfer content to HTML
-  $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-  $(".wind").html("Wind Speed: " + response.wind.speed);
-  $(".humidity").html("Humidity: " + response.main.humidity);
-  $(".temp").html("Temperature (K) " + response.main.temp);
-  // Log the data in the console as well
-  console.log("Wind Speed: " + response.wind.speed);
-  console.log("Humidity: " + response.main.humidity);
-  console.log("Temperature (K): " + response.main.temp);
+  var windSpeed = response.wind.speed;
+  var humidity = response.main.humidity;
+  var temperature = (response.main.temp * 9 / 5 - 459.67).toFixed(2);
+  var city = response.name;
+  localStorage.setItem("windSpeed", windSpeed);
+  localStorage.setItem("humidity", humidity);
+  localStorage.setItem("temperature", temperature);
+  localStorage.setItem("city", city);
+
 });
 } //closing weather location 
 
+// load text to the weather div
+
+function loadWeather() {
+
+  $(".city").html("<h1>" + localStorage.getItem("city") + " Weather Details</h1>");
+  $(".wind").html("Wind Speed: " + localStorage.getItem("windSpeed") + "mph");
+  $(".humidity").html("Humidity: " + localStorage.getItem("humidity") + "%");
+  $(".temp").html("Temperature: " + localStorage.getItem("temperature") + "F degree");
+
+};
+
 // end of map and weather
-
-
 
 
 }); // closing on document ready

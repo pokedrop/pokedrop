@@ -40,7 +40,7 @@ html, body {
 }
 
 .top-rotate {
-  transform: rotate(200deg);
+  transform: rotate(180deg);
   transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
 }
 

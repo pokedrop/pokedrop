@@ -8,7 +8,10 @@ html, body {
 
 body {
   font-family: "Lato", Helvetica, Arial, sans-serif;
-  background-color: #ff20a4;
+  background-image: url("../PokeBackground/sleepyDay.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .container {

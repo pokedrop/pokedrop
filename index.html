@@ -8,12 +8,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
   <!-- <link href="assets/style/reset.css" rel="stylesheet" type="text/css" /> -->
+  <script src="assets/script/dailyMsg1.js"></script>
   <link href="assets/style/style.css" rel="stylesheet" type="text/css" />
+  <link href="assets/style/dailyMsg.css" rel="stylesheet" type="text/css" />
   <script src="https://use.fontawesome.com/b6ab23dc8b.js"></script>
   <link rel="manifest" href="asset/script/manifest.json">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
   <!-- opening div contains pokeball and modal -->
   <div class="opening">
   <!-- <div class="display-hide">   -->
@@ -31,7 +33,16 @@
               <h4 class="modal-title" id="myModalLabel">Log On</h4>
             </div>  <!-- close modal header -->
             <div class="modal-body">
-              ...
+                <button disabled class="sumbit-button" id="quickstart-sign-in">Sign in with Google</button>
+
+                <!-- Container where we'll display the user details -->
+                <div class="quickstart-user-details-container">
+                  Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+                  <div>Firebase auth <code>currentUser</code> object value:</div>
+                  <pre><code id="quickstart-account-details">null</code></pre>
+                  <div>Google OAuth Access Token:</div>
+                  <pre><code id="quickstart-oauthtoken">null</code></pre>
+                </div>
               <input class="btn btn-primary user-login" data-toggle="modal" data-target="#myModal" type="submit" value="Submit">
             </div> <!-- close modal body -->
             <div class="modal-footer">
@@ -66,12 +77,18 @@
     </div>
   </div>
  <!-- weather page  -->
-  <div id="weather" class="page">
-    <div class="city">Saannn Frannn ci</div>
-    <div class="wind">hella windy</div>
-    <div class="humidity">moist </div>
-    <div class="temp">hot hot hot </div>
-    <div id="map"></div>
+  <div id="weather" class="page row">
+    <div class="panel weather-info col-md-8 col-xs-8 .col-sm-8">
+      <div class="panel-heading">
+        <h3 class="panel-title city">Panel title</h3>
+      </div>
+      <div class="panel-body">
+        <div class="wind">hella windy</div>
+        <div class="humidity">moist </div>
+        <div class="temp">hot hot hot </div>
+      </div>
+    </div>
+    <div id="map" class="map-class col-md-4 col-xs-4 .col-sm-4"></div>
   </div>
   <!-- pokemon page -->
   <div id="pokemon" class="page">
@@ -90,10 +107,8 @@
 <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
 <script src="assets/script/JavaScript.js"></script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSayUDK6Hh6o-JWM8pPBboUNY6wFWTK88&callback=initMap"></script>
-
-
-
-
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSayUDK6Hh6o-JWM8pPBboUNY6wFWTK88"></script>
+<!-- <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSayUDK6Hh6o-JWM8pPBboUNY6wFWTK88&callback=initMap"></script> -->
 </body>
 </html>

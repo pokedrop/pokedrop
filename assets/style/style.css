@@ -287,8 +287,16 @@ span.fa.fa-bars {
   font-style: italic;
 }
 
-#map {
-  height: 25%;
+.weather-info {
+  display: inline-block;
+  text-align: center;
+}
+#map.map-class {
+  height: 35%;
+  width: 45%;
+  position: sticky;
+  top: 10%;
+  display: inline-block;
 }
 
 

@@ -1,17 +1,17 @@
-*, *:before, *:after {
+/**, *:before, *:after {
   box-sizing: border-box;
 }
 
 html, body {
   height: 100%;
 }
-
-body {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+*/
+/*body {
+  font-family: 'Freckle Face', cursive;;
   background-color: #ff20a4;
-}
+}*/
 
-.container {
+/*.container {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -22,13 +22,13 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
+}*/
 
-.row {
+/*.row {
   color: #fff;
   font-size: 95px;
   text-align: center;
   font-weight: 600;
   line-height: 1.35;
   font-style: italic;
-}
+}*/

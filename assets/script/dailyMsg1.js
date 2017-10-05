@@ -5,35 +5,52 @@ $(document).ready(function(){
 
 	var randomImg = pokeImg[Math.floor(Math.random() * pokeImg.length)]
 	var randomImgPath = pokeImgPath + randomImg
+   var dailyMsg = "";
+   var temperature = localStorage.getItem("temperature");
+   var windSpeed = localStorage.getItem("windSpeed");
+   var humidity = localStorage.getItem("humidity")
+   $('.user-login').on('click', function(){ 
+	  $(".pokeImg").append("<img src=" + randomImgPath + " width='400px'>")
+     degrees(temperature);
+     otherWeather(windSpeed, humidity);
+     $(".weatherMsg").text(dailyMsg);
+   });
+   
 
-	$(".pokeImg").append("<img src=" + randomImgPath + " width='800px'>")
-	
-	var temperature = localStorage.getItem("temperature")
+   function degrees(tempF) {
 
-   	function showMessage (){
-   		dailyMsg = "";
+      if (tempF < 36){  
+         dailyMsg = '"Brrrr...Snow Attack! Wear some gloves."'
+         $("body").css("background-image", "url('assets/images/PokeBackground/freezeDay.jpg')")
+      }
+            
+      else if (tempF < 51){ 
+         dailyMsg = '"Pretty chilly over here. Bring a jacket!"'
+          $("body").css("background-image", "url('assets/images/PokeBackground/chillDay.jpg')")
+      }     
+            
+      else if (tempF < 80){ 
+         dailyMsg = '"Beautiful Day! Go out and catc`em all!"'
+         $("body").css("background-image", "url('assets/images/PokeBackground/warmDay.jpg')")
+      }     
 
-   		switch (temperature) {
-   			case 0:
-   				// if temperature < 36 F {dailyMsg = "Brrrr...Snow Attack! Wear some gloves."}
-   				// break
-   			case 1:
-   				// if tempeature < 51 F {dailyMsg = "Pretty chilly over here. Bring a jacket!"}
-   				//break
-   			case 2:
-   				// if temperature < 80 F {dailyMsg = "Beautiful Day! Go out and catc'em all!"}
-   				//break
-   			case 3:	
-   				// if temperature >= 80 {dailyMsg = "Find a beach and cool off! "}
-   				// break 	
-   			case 4: 
-   				// if wind speed > 27mph {dailyMsg = "No need to style your hair today. The wind will destroy you."}
-   				// break
-   			case 5:
-   				// if chances of rain > 25% {dailyMsg = "The sky might poop some large droplets..."}
-   				// break
-   		}
-         $(".weatherMsg").text(dailyMsg);
-   	}
-   	showMessage();
+      else if (tempF >= 80){ 
+         dailyMsg = '"Find a beach and cool off!"'
+         $("body").css("background-image", "url('assets/images/PokeBackground/hotDay.jpg')")
+      }    
+   };
+
+   function otherWeather(windSpeed, humidity){
+      if (windSpeed > 27){  //mph
+         dailyMsg = '"No need to style your hair today. The wind will destroy you."'
+         $("body").css("background-image", "url('assets/images/PokeBackground/windyDay.jpg')")
+      }     
+            
+      else if (humidity > 60){ 
+         dailyMsg = '"Beware of sweat and ICK!"'
+         $("body").css("background-image", "url('assets/images/PokeBackground/ickyDay.jpg')")
+      } 
+   };
+
+
 });

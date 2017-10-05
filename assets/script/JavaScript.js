@@ -23,58 +23,6 @@ initMap(weatherLocation);
   }; //closing if navigator.geolocation
 }; //initMap
 
-// Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAS0vmS8AcOvr9zEvifAg2y8xOkbMmOjAQ",
-    authDomain: "bootcamp-group-project-1.firebaseapp.com",
-    databaseURL: "https://bootcamp-group-project-1.firebaseio.com",
-    projectId: "bootcamp-group-project-1",
-    storageBucket: "bootcamp-group-project-1.appspot.com",
-    messagingSenderId: "828305776803"
-  };
-
-  firebase.initializeApp(config);
-  var database = firebase.database();
-
-function initApp() {
-      console.log("auth")
-      // Listening for auth state changes.
-      // [START authstatelistener]
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          var displayName = user.displayName;
-          var email = user.email;
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var isAnonymous = user.isAnonymous;
-          var uid = user.uid;
-          var providerData = user.providerData;
-          // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-          // [END_EXCLUDE]
-        } else {
-          // User is signed out.
-          // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign in with Google';
-          document.getElementById('quickstart-account-details').textContent = 'null';
-          document.getElementById('quickstart-oauthtoken').textContent = 'null';
-          // [END_EXCLUDE]
-        }
-        // [START_EXCLUDE]
-        document.getElementById('quickstart-sign-in').disabled = false;
-        // [END_EXCLUDE]
-      });
-      // [END authstatelistener]
-//      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-    }
-
-
-//end Auth
-  //$(document).on('click', ".user-login", initApp());
 
   //start with all the pages closed 
   $('.menu').hide();
@@ -169,7 +117,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 
 function weatherLocation(lat, long) {
-  console.log("I'm in weatherLocation")
   var APIKey = "166a433c57516f51dfab1f7edaed8413";
   // var latty = localStorage.getItem("latitude");
   // var longy = localStorage.getItem("longitude");

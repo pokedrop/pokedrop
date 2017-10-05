@@ -1,28 +1,26 @@
 
 $( document ).ready(function(){
+
 initMap(weatherLocation);
 
-  // init location API
-// function initMap() {
+// init location API
   function initMap(callback) {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        };  
-    var latitude = pos.lat; 
-    var longitude = pos.lng;
-    //var location = ("{lat: "+latitude+", lng: "+longitude+"}");
-    localStorage.setItem("latitude", latitude);
-    localStorage.setItem("longitude", longitude);
-    var location = JSON.stringify(pos);
-    localStorage.setItem("pos", location);
-    callback(latitude, longitude)
-    }); // closing getCurrentPosition
-  }; //closing if navigator.geolocation
-}; //initMap
-
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };  
+        var latitude = pos.lat; 
+        var longitude = pos.lng;
+        localStorage.setItem("latitude", latitude);
+        localStorage.setItem("longitude", longitude);
+        var location = JSON.stringify(pos);
+        localStorage.setItem("pos", location);
+        callback(latitude, longitude)
+      }); // closing getCurrentPosition
+    }; //closing if navigator.geolocation
+  }; //initMap
 
   //start with all the pages closed 
   $('.menu').hide();
@@ -35,17 +33,17 @@ initMap(weatherLocation);
 
   });
 
-  // successful authentication hides opening and show menu and welcome page
-  $('.user-login').on('click', function(){
-    $('.opening').hide();
-    $('.menu').show();
-    $('#welcome').show();
-  });
+  // //successful authentication hides opening and show menu and welcome page
+  // $('.user-login').on('click', function(){
+  //   $('.opening').hide();
+  //   $('.menu').show();
+  //   $('#welcome').show();
+  // });
 
   //page navigation 
   //open home page
   $('#menu').on("click", '.blue', function () {
-    $('#welcome').show();
+    $('#welcome').show(); welcome();
     $('#weather').hide();
     $('#profile').hide();
     $('#pokemon').hide();
@@ -83,8 +81,6 @@ function loadMap() {
   var lng = localStorage.getItem("longitude");
   var pos = JSON.parse(localStorage.getItem("pos"));
 
-  //var myLatLng = new google.maps.LatLng(pos); 
-
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 50.00, lng: -50.00},
     zoom: 6
@@ -118,8 +114,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function weatherLocation(lat, long) {
   var APIKey = "166a433c57516f51dfab1f7edaed8413";
-  // var latty = localStorage.getItem("latitude");
-  // var longy = localStorage.getItem("longitude");
 
   var latty = lat;
   var longy = long;

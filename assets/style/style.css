@@ -1,5 +1,6 @@
 body {
   background-color: #010131;
+  font-family: 'Freckle Face', cursive;
 }
 
 html, body {
@@ -66,10 +67,10 @@ html, body {
 .modal {
   position: fixed;
   left: 50%;
-  top: 50%;
-  margin-left: -35%;
+  top: 40%;
+  margin-left: -20%;
   margin-top: -10%;
-  width: 70%;
+  width: 40%;
   z-index: 1050;
   display: none;
   overflow: hidden;
@@ -271,7 +272,6 @@ span.fa.fa-bars {
 
 .page {
   width: auto;
-  background-color: #78a8cc;
   height: 100vh;
   margin-top: -80px;
 }
@@ -285,6 +285,8 @@ span.fa.fa-bars {
   font-weight: 600;
   line-height: 1.35;
   font-style: italic;
+  display: inline-flex;
+  align-items: center;
 }
 
 .weather-info {

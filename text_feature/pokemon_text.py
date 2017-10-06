@@ -29,7 +29,7 @@ pokemon_weather = {
 }
 
 def get_the_weather(zip):
-    APIKey = '166a433c57516f51dfab1f7edaed8413'
+    APIKey = ''
     URL = 'https://api.openweathermap.org/data/2.5/forecast?&appid='+APIKey+'&zip='+zip+',us'
     r = requests.get(URL).json()
     description = r['list'][1]['weather'][0]['description']
@@ -49,9 +49,9 @@ def poke_text():
     #Form submission in results
     #print(results)
     # Account SID from twilio.com/console
-    account_sid = "ACc4f60c4b6a51ada14fae7c5bfcec0a87"
+    account_sid = ""
     # Auth Token from twilio.com/console
-    auth_token = "a6faeee82fb989b500274aac8b9fc487"
+    auth_token = ""
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         to="+1" + results['cell'],

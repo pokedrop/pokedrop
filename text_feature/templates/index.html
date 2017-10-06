@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Texting</title>
+	<meta charset="UTF-8">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- <link href="assets/style/reset.css" rel="stylesheet" type="text/css" /> -->
+  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+  <script src="assets/script/firebaseLoginWithGoogle.js"></script>
+</head>
+<body>
+  <div class="page row">
+    <div class="panel-body col-md-12" id="notification">
+      <form role="form" action="http://localhost:5000/text" method="POST">
+        <div class="form-group">
+          <!-- Only works with my 10-digit phone number with no special characters i.e. ########## -->
+          <label for="phone-input">Cell Phone:</label>
+          <input class="form-control" id="phone-input" type="text" name="cell">
+        </div>
+        <div class="form-group">
+          <label for="zipcode-input">Zip Code:</label>
+          <input class="form-control" id="zipcode-input" type="text" name="zip">
+        </div>
+        <button class="btn btn-default" id="send-text" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

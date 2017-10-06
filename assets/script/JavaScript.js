@@ -43,7 +43,8 @@ initMap(weatherLocation);
   //page navigation 
   //open home page
   $('#menu').on("click", '.blue', function () {
-    $('#welcome').show(); welcome();
+    $('#welcome').show(); 
+    // welcome(); why is this here? <<~~this was causing home images to duplicate
     $('#weather').hide();
     $('#profile').hide();
     $('#pokemon').hide();
@@ -71,6 +72,31 @@ $('#menu').on("click", '.lightblue', function () {
   $('#weather').hide();
   $('#profile').show();
   $('#pokemon').hide();
+});
+
+//adding a new user
+$("#add-user").on("click", function(event) {
+  event.preventDefault();
+
+var name = $("#name-input").val().trim();
+var email = $("#email-input").val().trim();
+var address = $("#location-input").val().trim();
+
+// I think it would be better if we stored members
+//unsure how to do this usin setItem
+// var newMember = {
+//   name: membername,
+//   email: memberemail,
+//   address: memberaddress
+// };
+
+localStorage.setItem("name", name);
+localStorage.setItem("email", email);
+localStorage.setItem("address", address);
+
+$("#name-input").val("");
+$("#email-input").val("");
+$("#location-input").val("");
 });
 
 

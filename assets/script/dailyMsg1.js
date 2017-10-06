@@ -27,7 +27,7 @@ $(document).ready(function(){
           
     else if (tempF < 51){ 
        dailyMsg = '"Pretty chilly over here. Bring a jacket!"'
-        $("body").css("background-image", "url('assets/images/PokeBackground/chillDay.jpg')")
+        $("body").css("background-image", "url('assets/images/PokeBackground/cloudyDay.jpg')")
     }     
           
     else if (tempF < 80){ 
@@ -49,7 +49,7 @@ $(document).ready(function(){
             
       else if (humidity > 60){ 
          dailyMsg = '"Beware of sweat and ICK!"'
-         $("body").css("background-image", "url('assets/images/PokeBackground/ickyDay.jpg')")
+         $("body").css("background-image", "url('assets/images/PokeBackground/ickyDay.png')")
       } 
    };
 

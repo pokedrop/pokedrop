@@ -1,4 +1,5 @@
 import requests
+import keys
 from flask import Flask
 from flask import render_template
 from flask import request
@@ -7,9 +8,9 @@ from twilio.rest import Client
 
 app = Flask(__name__)
 # Account SID from twilio.com/console
-account_sid = "ACc4f60c4b6a51ada14fae7c5bfcec0a87"
+account_sid = keys.account_sid
 # Auth Token from twilio.com/console
-auth_token = "a6faeee82fb989b500274aac8b9fc487"
+auth_token = keys.auth_token
 
 pokemon_weather = {
     '2': ('Pikachu', 'Expect Thunder storms',

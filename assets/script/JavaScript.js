@@ -1,4 +1,4 @@
-
+// nice job wrapping this in a document.ready block
 $( document ).ready(function(){
 
 initMap(weatherLocation);
@@ -33,6 +33,7 @@ initMap(weatherLocation);
 
   });
 
+  // best to just remove commented out code
   // //successful authentication hides opening and show menu and welcome page
   // $('.user-login').on('click', function(){
   //   $('.opening').hide();
@@ -42,6 +43,10 @@ initMap(weatherLocation);
 
   //page navigation 
   //open home page
+
+  // the logic in these listeners is fairly repetitive - might be a good spot
+  // to DRY things up by having one function that simply hides the four main elements
+  // and then you only have to call `.show` on the one element you really care about.
   $('#menu').on("click", '.blue', function () {
     $('#welcome').show(); 
     // welcome(); why is this here? <<~~this was causing home images to duplicate
@@ -78,6 +83,9 @@ $('#menu').on("click", '.lightblue', function () {
 $("#add-user").on("click", function(event) {
   event.preventDefault();
 
+// I know you're probably sick of me mentioning it, but consistent indentation
+// makes your code much easier to visually understand which pays serious
+// dividends towards maintainability.
 var name = $("#name-input").val().trim();
 var email = $("#email-input").val().trim();
 var address = $("#location-input").val().trim();
@@ -122,6 +130,7 @@ function loadMap() {
       // map.setCenter(pos);
       map.setCenter(pos);
       loadWeather();
+      // seems a bit odd to be handling a location error here - the code seems to indicate that things have worked
       handleLocationError(true, infoWindow, map.getCenter());      
   } else {
     // Browser doesn't support Geolocation
